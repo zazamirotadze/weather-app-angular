@@ -26,8 +26,9 @@ export class App implements OnInit {
     const name = this.selectedLocationName();
 
     if (!name) return undefined;
+    const foundLocation = locations.find(loc => loc.name === name);
 
-    return locations.find(loc => loc.name === name) ?? null;
+    return foundLocation? {...foundLocation} : null;
   });
   
  

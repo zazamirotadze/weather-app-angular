@@ -22,6 +22,7 @@ export class LocationMenu {
   @Input() isLoaded! : WritableSignal<boolean>;
 
   setLocation(locationName: string) {
+    this.selectedLocationName.set('');
     this.selectedLocationName.set(locationName);
     this.isLoaded.set(false);
     this.router.navigate([], {
