@@ -1,7 +1,7 @@
-@for (info of infos; track info) {
+ @for (info of infos(); track info) {
     @if (infosMap()?.[info]) {
      <h2>{{ infosMap()?.[info] }}</h2>
     }
 } @empty {
-    <h2>{{translations.dataCanNotbeFetched[supportedLanguage()?.name ?? 'ka']}}</h2>
+    <h2>{{translations.dataCanNotbeFetched[supportedLanguage().name]}}</h2>
 }

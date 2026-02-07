@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { environment } from '../environments/environment.development';
 import { Location } from '../types/weather.types';
 import { HttpClient } from '@angular/common/http';
@@ -6,14 +6,22 @@ import { throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class Weatherapi {
-  constructor(private http: HttpClient) {}
-  
-  detData(supportedLocation: Omit<Location, 'name'> ){
-    if (!environment.weatherApiKey) {
-      return throwError(() => new Error('API key is missing'));
-    }
+export class WeatherApi {
+  private readonly http = inject(HttpClient);
 
-    return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${supportedLocation.lat}&lon=${supportedLocation.lon}&appid=${environment.weatherApiKey}&units=metric`);
+  private getData(baseUrl: string, supportedLocation: Omit<Location, 'name'>) {
+      if (!environment.weatherApiKey) {
+      return throwError(() => new Error('API key is missing'));
+      }
+
+    return this.http.get(`${baseUrl}?lat=${supportedLocation.lat}&lon=${supportedLocation.lon}&appid=${environment.weatherApiKey}&units=metric`);
+  }
+  
+  getForecastWeatherData(supportedLocation: Omit<Location, 'name'> ){
+    return this.getData('https://api.openweathermap.org/data/2.5/forecast', supportedLocation);
+  }
+
+  getCurrentWeatherData(supportedLocation: Omit<Location, 'name'> ){
+    return this.getData('https://api.openweathermap.org/data/2.5/weather', supportedLocation);
   }
 }

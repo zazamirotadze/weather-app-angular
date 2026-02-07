@@ -1,18 +1,7 @@
 <div>
     <div class="menu">
-       <div><app-location-menu  [isLoaded]="isLoaded" [selectedLocationName]="selectedLocationName" [supportedLocation]="supportedLocation" [supportedLanguage]="supportedLanguage"/></div> 
-        <div><app-language-menu [selectedLanguageName]="selectedLanguageName" [supportedLanguage]="supportedLanguage"/></div> 
+       <div><app-location-menu/></div> 
+        <div><app-language-menu/></div> 
     </div>
-    @if (!isLoaded()) {
-        <h2>{{translations.loading[supportedLanguage()?.name ?? 'ka']}}</h2>
-    }
-    @if (isLoaded()  && !supportedLanguage() ) {
-        <h2>{{translations.incorrectLanguage[supportedLanguage()?.name ?? 'ka']}}</h2>
-    }
-    @if (isLoaded()  && !supportedLocation() ) {
-        <h2>{{translations.incorrectLocation[supportedLanguage()?.name ?? 'ka']}}</h2>
-    }
-
-    <div><app-location-representation [supportedLanguage]="supportedLanguage" [supportedLocation]="supportedLocation"[isLoaded]="isLoaded"/></div>
-    
+    <div><app-location-representation/></div>
 </div>

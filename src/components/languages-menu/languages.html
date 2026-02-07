@@ -1,4 +1,4 @@
-<button class="menu-button" (click)='isOpen.set(!isOpen())'>{{translations.chooseLanguage[supportedLanguage()?.name ?? 'ka']}}</button>
+<button class="menu-button" (click)='isOpen.set(!isOpen())'>{{translations.chooseLanguage[weatherstate.supportedLanguage()?.name ?? 'ka']}}</button>
 @if (isOpen()) {
     <div class="options-container" (clickOutside)="isOpen.set(false)">
         @for (language of languages; track language) {

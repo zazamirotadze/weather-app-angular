@@ -1,9 +1,10 @@
-import { Component, Input, Signal, WritableSignal, signal } from '@angular/core';
+import { Component, WritableSignal, signal } from '@angular/core';
 import { languages } from '../../data/languages';
 import { Language } from '../../types/weather.types';
 import { translations } from '../../data/translations';
-import { ClickOutside } from '../../services/click-outside';
+import { ClickOutside } from '../../directives/click-outside';
 import { Router, ActivatedRoute } from '@angular/router';
+import { WeatherState } from '../../services/weatherState';
 
 @Component({
   selector: 'app-language-menu',
@@ -11,15 +12,13 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './languages.html'
 })
 export class LanguageMenu {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute, public weatherstate: WeatherState) {}
   languages: Language[] = languages;
   translations = translations;
   isOpen: WritableSignal<boolean> = signal(false); 
-  @Input() selectedLanguageName! : WritableSignal<null | string>;
-  @Input() supportedLanguage! : Signal<null | Language>;
   
   setLanguage(language: string) {
-    this.selectedLanguageName.set(language);
+    this.weatherstate.setLanguage(language);
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { language: language },
