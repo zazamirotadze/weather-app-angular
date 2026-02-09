@@ -1,7 +1,15 @@
-@if (viewState() === WeatherPresentationState.Loading) {
-  <h2>{{translations.loading[weatherState.supportedLanguage()?.name ?? 'ka']}}</h2>
-} @else if (viewState() === WeatherPresentationState.Success) {
-    <div class='menu'>
+@switch (viewState()) {
+  @case (WeatherPresentationState.Loading) {
+    <h2>{{translations.loading[weatherState.supportedLanguage()?.name ?? 'ka']}}</h2>
+  }
+  @case (WeatherPresentationState.LanguageError) {
+    <h2> {{ translations.incorrectLanguage[weatherState.supportedLanguage()?.name ?? 'ka'] }} </h2>
+  }
+  @case (WeatherPresentationState.LocationError) {
+    <h2> {{ translations.incorrectLocation[weatherState.supportedLanguage()?.name ?? 'ka'] }} </h2>
+  }
+  @case (WeatherPresentationState.Success) {
+     <div class='menu'>
         <div>
             <h1>{{translatedLocationName()}}</h1>
             <app-render-weather-icon [iconSize]="100" [weatherCondition]="weatherState.currentWeather()!" [timeOfDay] = "weatherState.timeOfDay()!"/>
@@ -19,6 +27,8 @@
             }
         </div>  
     </div>
-} @else {
-  <h2> {{ translations.dataCanNotbeFetched[weatherState.supportedLanguage()?.name ?? 'ka'] }} </h2>
+  }
+  @default {
+    <h2> {{ translations.dataCanNotbeFetched[weatherState.supportedLanguage()?.name ?? 'ka'] }} </h2>
+  }
 }

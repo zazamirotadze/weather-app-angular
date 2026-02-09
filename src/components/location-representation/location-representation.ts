@@ -20,18 +20,22 @@ export class LocationRepresentation {
   translations = translations;
 
   viewState = computed(() => {
-    const 
-        hasConfig = this.weatherState.supportedLanguage() && this.weatherState.supportedLocation(),
-        isSuccess = !this.weatherState.userResource.error(),
-        hasData = this.weatherState.weatherData() && this.weatherState.weatherData()?.length;
-
     if (this.weatherState.userResource.isLoading()) {
       return WeatherPresentationState.Loading;
-    } else if (hasConfig && isSuccess && hasData) {
-      return WeatherPresentationState.Success;
-    } else {
-      return WeatherPresentationState.Error;
-    }
+    } 
+    if (!this.weatherState.supportedLanguage()) {
+      return WeatherPresentationState.LanguageError;
+    } 
+
+    if (!this.weatherState.supportedLocation()) {
+      return WeatherPresentationState.LocationError;
+    } 
+
+    if (this.weatherState.userResource.error() || !this.weatherState.weatherData()?.length) {
+      return WeatherPresentationState.FetchError;
+    } 
+    
+    return WeatherPresentationState.Success;
   });
 
   translatedLocationName = computed(() => this.translations.locations[this.weatherState.supportedLocation()?.name as SupportedLocations][this.weatherState.supportedLanguage()?.name as SupportedLanguages]);

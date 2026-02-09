@@ -1,7 +1,9 @@
 enum WeatherPresentationState {
     Success,
     Loading,
-    Error
+    LanguageError,
+    LocationError,
+    FetchError
 }
 
 enum TimeOfDay {
