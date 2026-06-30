@@ -1,0 +1,6 @@
+.static-map {
+    height: 550px; 
+    width: 100%; 
+    background: orange;
+    border-radius: 8px;
+}

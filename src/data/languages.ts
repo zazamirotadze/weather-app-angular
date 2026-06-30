@@ -1,8 +1,10 @@
-import { Language } from "../types/weather.types";
+import { Language, SupportedLanguages } from "../types/weather.types";
 
 const languages: Language[] = [
-    { name: 'en', label: 'English', iconUrl: 'flags/en.png' },
-    { name: 'ka', label: 'ქართული', iconUrl: 'flags/ge.png' }
+    { name: 'en', label: 'English', iconUrl: 'flags/en.svg' },
+    { name: 'ka', label: 'ქართული', iconUrl: 'flags/ge.svg' }
 ]
 
-export { languages };
+const SUPPORTED_LANGUAGES: SupportedLanguages[] = ['ka', 'en'];
+
+export { languages, SUPPORTED_LANGUAGES };

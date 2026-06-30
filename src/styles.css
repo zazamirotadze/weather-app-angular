@@ -2,6 +2,11 @@ body{
     background-color: #F9F57C;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card{
     border: 5px solid white;
     padding: 20px;
@@ -12,16 +17,9 @@ body{
     display: none;
 }
 
-.menu{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px; 
-}
-
-.menu > div{
-    position: relative; 
+.dropdown-wrapper {
+   position: relative;
+   display: inline-block
 }
 
 .options-container {
@@ -29,7 +27,6 @@ body{
     position: absolute;
     width: 100%; 
 }
-
 
 .menu-button{
     all: unset; 

@@ -1,0 +1,29 @@
+<div class="videos-container">
+  @for (id of videoIds(); track id) {
+    <button class="video-click-btn" (click)="openVideo(id)">
+        <div class="video-wrapper-inner">
+            <img [src]="'https://vumbnail.com/' + id + '.jpg'" alt="ვიდეოს გახსნა" class="video-thumb" />
+            <span class="play-icon">▶</span>
+        </div>
+    </button>
+  }
+</div>
+
+@if (activeVideoId()) {
+  <div class="modal-overlay" (click)="closeVideo()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      
+      <button class="close-btn" (click)="closeVideo()">&times;</button>
+      
+      <div class="video-wrapper">
+        <iframe 
+          [src]="getSafeVideoUrl(activeVideoId()!)"
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          title="Weather Video">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+}

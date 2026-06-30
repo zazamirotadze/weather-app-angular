@@ -1,34 +1,28 @@
 @switch (viewState()) {
   @case (WeatherPresentationState.Loading) {
-    <h2>{{translations.loading[weatherState.supportedLanguage()?.name ?? 'ka']}}</h2>
+    <h2 i18n>იტვირთება ...</h2>
   }
-  @case (WeatherPresentationState.LanguageError) {
-    <h2> {{ translations.incorrectLanguage[weatherState.supportedLanguage()?.name ?? 'ka'] }} </h2>
-  }
-  @case (WeatherPresentationState.LocationError) {
-    <h2> {{ translations.incorrectLocation[weatherState.supportedLanguage()?.name ?? 'ka'] }} </h2>
-  }
-  @case (WeatherPresentationState.Success) {
-     <div class='menu'>
+  @case (WeatherPresentationState.Success) { 
+     <div class='weather-content'>
         <div>
             <h1>{{translatedLocationName()}}</h1>
             <app-render-weather-icon [iconSize]="100" [weatherCondition]="weatherState.currentWeather()!" [timeOfDay] = "weatherState.timeOfDay()!"/>
-            <app-render-weather-info [weatherForSpecificDay]="weatherState.currentWeather()!" [infos]="['temp', 'feels_like', 'humidity', 'pressure', 'windSpeed']"  [supportedLanguage]="weatherState.supportedLanguage()!"/>
+            <app-render-weather-info [weatherForSpecificDay]="weatherState.currentWeather()!" [infos]="['temp', 'feels_like', 'humidity', 'pressure', 'windSpeed']"/>
         </div>
         <div>  
             @for (futureWeather of weatherState.futureWeather(); track futureWeather.dt_txt) {
                 <div class='info'>
-                    <div><h2>{{convertIntoGeorgianDate(futureWeather.dt_txt, weatherState.supportedLanguage()?.name || null) }}</h2></div>
+                    <div><h2>{{convertIntoGeorgianDate(futureWeather.dt_txt) }}</h2></div>
                     <div><app-render-weather-icon [iconSize]="40" [weatherCondition]="futureWeather" [timeOfDay] = "weatherState.timeOfDay()!"/></div>
-                    <div><app-render-weather-info [weatherForSpecificDay]="futureWeather" [infos]="['temp']" [supportedLanguage]="weatherState.supportedLanguage()!"/></div>
+                    <div><app-render-weather-info [weatherForSpecificDay]="futureWeather" [infos]="['temp']"/></div>
                 </div>
             } @empty {
-                <h2>{{translations.dataCanNotbeFetched[weatherState.supportedLanguage()?.name ?? 'ka']}}</h2>
+                <h2 i18n>მონაცემების მოტანა ვერ მოხერხდა</h2>
             }
         </div>  
     </div>
   }
   @default {
-    <h2> {{ translations.dataCanNotbeFetched[weatherState.supportedLanguage()?.name ?? 'ka'] }} </h2>
+    <h2 i18n>მონაცემების მოტანა ვერ მოხერხდა</h2>
   }
 }

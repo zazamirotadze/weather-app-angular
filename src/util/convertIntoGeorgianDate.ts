@@ -1,7 +1,31 @@
-import { translations } from "../data/translations";
-import { SupportedLanguages } from "../types/weather.types";
+const weekdayMap: Record<string, string> = 
+{
+    'Monday': $localize`ორშაბათი`,
+    'Tuesday': $localize`სამშაბათი`,
+    'Wednesday': $localize`ოთხშაბათი`,
+    'Thursday': $localize`ხუთშაბათი`,
+    'Friday': $localize`პარასკევი`,
+    'Saturday': $localize`შაბათი`,
+    'Sunday': $localize`კვირა`
+};
 
-const convertIntoGeorgianDate = (date: string, supportedLanguage: SupportedLanguages | null): string => {
+const monthMap: Record<string, string> = 
+{
+    'January': $localize`იანვარი`,
+    'February': $localize`თებერვალი`,
+    'March': $localize`მარტი`,
+    'April': $localize`აპრილი`,
+    'May': $localize`მაისი`,
+    'June': $localize`ივნისი`,
+    'July': $localize`ივლისი`,
+    'August': $localize`აგვისტო`,
+    'September': $localize`სექტემბერი`,
+    'October': $localize`ოქტომბერი`,
+    'November': $localize`ნოემბერი`,
+    'December': $localize`დეკემბერი`
+};
+
+const convertIntoGeorgianDate = (date: string): string => {
     const isoDate = date.replace(" ", "T")
     
     if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(isoDate)){
@@ -17,8 +41,8 @@ const convertIntoGeorgianDate = (date: string, supportedLanguage: SupportedLangu
 
         engWeekday = formattedDate.split(',')[0],
         engMonth = formattedDate.split(' ')[1],
-        translatedWeekday = translations.dates.weekdays[engWeekday as keyof typeof translations.dates.weekdays][supportedLanguage ?? 'ka'],
-        translatedMonth = translations.dates.months[engMonth as keyof typeof translations.dates.months][supportedLanguage ?? 'ka']
+        translatedWeekday = weekdayMap[engWeekday] || engWeekday,
+        translatedMonth = monthMap[engMonth] || engMonth;
 
     return formattedDate.replace(engWeekday, translatedWeekday).replace(engMonth, translatedMonth);
 }

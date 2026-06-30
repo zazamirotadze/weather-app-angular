@@ -1,0 +1,7 @@
+{
+  "xliffSync.sourceFile": "src/locale/messages.xlf",
+  "xliffSync.targetFiles": [
+    "src/locale/messages.en.xlf"
+  ],
+  "xliffSync.baseFile": "messages.xlf"
+}

@@ -1,0 +1,15 @@
+.return-to-main-page{
+    display: inline-flex;
+    background-color: orangered;
+    color: white;
+    padding: 15px 10px; 
+    border-radius: 4px;
+}
+
+.return-to-main-page:hover {
+    background-color: crimson;
+}
+
+.return-to-main-page:active {
+    background-color: crimson; 
+}

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="ka" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7141742733582194985" datatype="html">
+        <source> პროგნოზი </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6758788232448387994" datatype="html">
+        <source> ვიდეოები </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5309184502201841427" datatype="html">
+        <source> რუკა </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8393369899780165080" datatype="html">
+        <source>აირჩიეთ ენა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/languages-menu/languages.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4631348204163998227" datatype="html">
+        <source>აირჩიეთ ადგილი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-menu/location-menu.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6938978623253395062" datatype="html">
+        <source>იტვირთება ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/location-representation.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8095590703883642870" datatype="html">
+        <source>მონაცემების მოტანა ვერ მოხერხდა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/location-representation.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/location-representation.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/render-weather-info/render-weather-info.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7506261639848739196" datatype="html">
+        <source>ტემპერატურა: <x id="PH" equiv-text="temp"/> გრადუსი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/render-weather-info/render-weather-info.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="634942105886906063" datatype="html">
+        <source>ქარში მგრძნობელობა: <x id="PH" equiv-text="feelsLike"/> გრადუსი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/render-weather-info/render-weather-info.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5129280746548275280" datatype="html">
+        <source>ტენიანობა: <x id="PH" equiv-text="humidity"/> პროცენტი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/render-weather-info/render-weather-info.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2818318820189371475" datatype="html">
+        <source>წნევა: <x id="PH" equiv-text="pressure"/> კილო პასკალი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/render-weather-info/render-weather-info.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8845340551293438517" datatype="html">
+        <source>ქარის სისწრაფე: <x id="PH" equiv-text="windSpeed"/> კმ/სთ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/location-representation/render-weather-info/render-weather-info.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="297778441993168738" datatype="html">
+        <source>წირქვალი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/data/locations.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8540357022501423126" datatype="html">
+        <source>თბილისი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/data/locations.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="204474383075511746" datatype="html">
+        <source>ქუთაისი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/data/locations.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1201394905478399762" datatype="html">
+        <source>პროგნოზი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/forecast/forecast.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2925064648537103620" datatype="html">
+        <source>რუკა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/map/map.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2814272944161343621" datatype="html">
+        <source>უი! როგორც ჩანს, რაღაც არასწორად მოხდა. გთხოვთ, სცადოთ მოგვიანებით.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6549296601419609705" datatype="html">
+        <source>მთავარ გვერდზე დაბრუნება</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="763771365046207650" datatype="html">
+        <source>გვერდი ვერ მოიძებნა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/not-found/not-found.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8437733616479348880" datatype="html">
+        <source>ვიდეოები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/videos/videos.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2427863051280579151" datatype="html">
+        <source>ორშაბათი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7960990803925148923" datatype="html">
+        <source>სამშაბათი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9213837351227668329" datatype="html">
+        <source>ოთხშაბათი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7629564997334259986" datatype="html">
+        <source>ხუთშაბათი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7207185750713370535" datatype="html">
+        <source>პარასკევი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1272771408003972850" datatype="html">
+        <source>შაბათი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6233849458753888473" datatype="html">
+        <source>კვირა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1562706158868206820" datatype="html">
+        <source>იანვარი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7402656309952027433" datatype="html">
+        <source>თებერვალი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1228157413226190399" datatype="html">
+        <source>მარტი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6268011426457627561" datatype="html">
+        <source>აპრილი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3761358983549306051" datatype="html">
+        <source>მაისი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8720348363461118250" datatype="html">
+        <source>ივნისი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="683231160185375354" datatype="html">
+        <source>ივლისი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="561505332562005012" datatype="html">
+        <source>აგვისტო</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="33114894850551054" datatype="html">
+        <source>სექტემბერი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1647935586269628258" datatype="html">
+        <source>ოქტომბერი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3115463613439449321" datatype="html">
+        <source>ნოემბერი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5891197270895680890" datatype="html">
+        <source>დეკემბერი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/util/convertIntoGeorgianDate.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

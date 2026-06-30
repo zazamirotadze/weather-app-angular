@@ -1,6 +1,5 @@
 import { computed, inject, Injectable, resource, signal, WritableSignal } from '@angular/core';
 import { Location, WeatherData } from '../types/weather.types';
-import { languages } from '../data/languages';
 import { locations } from '../data/locations';
 import { WeatherApi } from './weatherapi';
 import { firstValueFrom } from 'rxjs';
@@ -12,17 +11,11 @@ import { TimeOfDay } from '../enums/weather.enums';
 export class WeatherState {
     private weatherApi = inject(WeatherApi);
     private _selectedLocationName: WritableSignal<null | string> = signal(null);
-    private _selectedLanguageName: WritableSignal<null | string> = signal(null);
 
     setLocation(name: string) {
         this._selectedLocationName.set(name);
     }
 
-    setLanguage(name: string) {
-        this._selectedLanguageName.set(name);
-    }
-
-    supportedLanguage = computed(() => languages.find(language => language.name === this._selectedLanguageName()) || null);
     supportedLocation = computed<Location | null>(() =>  locations.find(loc => loc.name === this._selectedLocationName()) || null);
 
     

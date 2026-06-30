@@ -1,13 +1,14 @@
-
-<button class="menu-button" (click)='isOpen.set(!isOpen())'>{{translations.chooseLocation[weatherState.supportedLanguage()?.name ?? 'ka']}}</button>
-@if (isOpen()) {
-    <div class="options-container" (clickOutside)="isOpen.set(false)">
-        @for (location of locations; track location.name) {
-            <div 
-                class="option"
-                (click)='isOpen.set(false); setLocation(location.name);'>
-                {{translations.locations[location.name][weatherState.supportedLanguage()?.name ?? 'ka']}}
-            </div> 
-        }
-    </div>
-}
+<div class="dropdown-wrapper">
+    <button class="menu-button" (click)='isOpen.set(!isOpen())' i18n>აირჩიეთ ადგილი</button>
+    @if (isOpen()) {
+        <div class="options-container" (clickOutside)="isOpen.set(false)">
+            @for (location of locations; track location.name) {
+                <div 
+                    class="option"
+                    (click)='isOpen.set(false); setLocation(location.name);'>
+                    {{location.displayName}}
+                </div> 
+            }
+        </div>
+    }
+</div>

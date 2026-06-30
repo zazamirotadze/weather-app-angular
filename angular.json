@@ -8,11 +8,21 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
+      "i18n": {
+        "sourceLocale": {
+          "code": "ka",
+          "baseHref": "ka/"
+        },
+        "locales": {
+          "en": "src/locale/messages.en.xlf"
+        }
+      },
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@ngx-env/builder:application",
           "options": {
+            "localize": true,
             "browser": "src/main.ts",
             "outputPath": "dist/weather-app-typescript-angular",
             "index": "src/index.html",
@@ -61,6 +71,12 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "en": {
+              "localize": ["en"]
+            },
+            "ka": {
+              "localize": ["ka"]
             }
           },
           "defaultConfiguration": "production"
@@ -73,6 +89,12 @@
             },
             "development": {
               "buildTarget": "weather-app-typescript-angular:build:development"
+            },
+            "en": {
+              "buildTarget": "weather-app-typescript-angular:build:development,en"
+            },
+            "ka": {
+              "buildTarget": "weather-app-typescript-angular:build:development,ka"
             }
           },
           "defaultConfiguration": "development",
@@ -80,7 +102,9 @@
         },
         "extract-i18n": {
           "builder": "@ngx-env/builder:extract-i18n",
-          "options": {}
+          "options": {
+            "buildTarget": "weather-app-typescript-angular:build"
+          }
         },
         "test": {
           "builder": "@ngx-env/builder:karma",
@@ -94,6 +118,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets"
               }
             ],
             "styles": [

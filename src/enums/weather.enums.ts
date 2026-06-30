@@ -1,8 +1,6 @@
 enum WeatherPresentationState {
     Success,
     Loading,
-    LanguageError,
-    LocationError,
     FetchError
 }
 

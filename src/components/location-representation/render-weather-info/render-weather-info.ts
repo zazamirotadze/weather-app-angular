@@ -1,6 +1,5 @@
-import { Component, computed, Input, Signal, input } from '@angular/core';
-import { Info, Language, WeatherData } from '../../../types/weather.types';
-import { translations } from '../../../data/translations';
+import { Component, computed, Signal, input } from '@angular/core';
+import { Info, WeatherData } from '../../../types/weather.types';
 
 @Component({
   selector: 'app-render-weather-info',
@@ -8,20 +7,25 @@ import { translations } from '../../../data/translations';
   templateUrl: './render-weather-info.html'
 })
 export class RenderWeatherInfo {
-  translations = translations
-  weatherForSpecificDay = input.required<WeatherData>();
-  infos = input.required<Info[]>();
-  supportedLanguage = input.required<Language>();
+  public weatherForSpecificDay = input.required<WeatherData>();
+  public infos = input.required<Info[]>();
 
   infosMap: Signal<Record<string, string> | null> = computed(() => {
-      if (!this.weatherForSpecificDay) return null;
+      const weather = this.weatherForSpecificDay();
+      if (!weather) return null;
+
+      const temp = weather.main.temp.toFixed(1);
+      const feelsLike = weather.main.feels_like.toFixed(1);
+      const humidity = weather.main.humidity.toString();
+      const pressure = (weather.main.pressure / 10).toFixed(1);
+      const windSpeed = (weather.wind.speed * 3.6).toFixed(1);
 
       return {
-        temp: this.translations.temp[this.supportedLanguage()?.name].replace('{value}', this.weatherForSpecificDay().main.temp.toFixed(1)),
-        feels_like: this.translations.feelsLike[this.supportedLanguage()?.name].replace('{value}', this.weatherForSpecificDay().main.feels_like.toFixed(1)),
-        humidity: this.translations.humidity[this.supportedLanguage()?.name].replace('{value}', this.weatherForSpecificDay().main.humidity.toString()),
-        pressure: this.translations.pressure[this.supportedLanguage()?.name].replace('{value}', (this.weatherForSpecificDay().main.pressure / 10).toFixed(1)),
-        windSpeed: this.translations.windSpeed[this.supportedLanguage()?.name].replace('{value}', (this.weatherForSpecificDay().wind.speed * 3.6).toFixed(1))
+        temp: $localize`ტემპერატურა: ${temp} გრადუსი`,
+        feels_like: $localize`ქარში მგრძნობელობა: ${feelsLike} გრადუსი`,
+        humidity: $localize`ტენიანობა: ${humidity} პროცენტი`,
+        pressure: $localize`წნევა: ${pressure} კილო პასკალი`,
+        windSpeed: $localize`ქარის სისწრაფე: ${windSpeed} კმ/სთ`
       };
    });
 }

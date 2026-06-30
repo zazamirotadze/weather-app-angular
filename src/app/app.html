@@ -1,7 +1,35 @@
-<div>
-    <div class="menu">
-       <div><app-location-menu/></div> 
-        <div><app-language-menu/></div> 
-    </div>
-    <div><app-location-representation/></div>
+<div class="app">
+    <header class="header">
+        <nav>
+            <a 
+                class="page-anchor" 
+                routerLink="/forecast" 
+                routerLinkActive="page-anchor-active" 
+                [routerLinkActiveOptions]="{ paths: 'subset', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' }"
+                i18n
+            >
+                პროგნოზი
+            </a>
+            <a 
+                class="page-anchor" 
+                routerLink="/videos" 
+                routerLinkActive="page-anchor-active"
+                [routerLinkActiveOptions]="{ paths: 'subset', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' }"
+                i18n
+            >
+                ვიდეოები
+            </a>
+            <a 
+                class="page-anchor" 
+                routerLink="/map" 
+                routerLinkActive="page-anchor-active"
+                [routerLinkActiveOptions]="{ paths: 'subset', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' }"
+                i18n
+            >
+                რუკა
+            </a>
+        </nav>
+        <app-language-menu/>
+    </header>
+    <router-outlet></router-outlet>
 </div>

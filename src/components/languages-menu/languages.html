@@ -1,11 +1,13 @@
-<button class="menu-button" (click)='isOpen.set(!isOpen())'>{{translations.chooseLanguage[weatherstate.supportedLanguage()?.name ?? 'ka']}}</button>
-@if (isOpen()) {
-    <div class="options-container" (clickOutside)="isOpen.set(false)">
-        @for (language of languages; track language) {
-            <div class="option" (click)='isOpen.set(false); setLanguage(language.name);'>
-                <img [src]="language.iconUrl" alt="language.name"  width='24' height='16'/> 
-            </div>
-        }
-    </div>
-}
+<div class="dropdown-wrapper">
+    <button class="menu-button" (click)='isOpen.set(!isOpen())' i18n>აირჩიეთ ენა</button>
+    @if (isOpen()) {
+        <div class="options-container" (clickOutside)="isOpen.set(false)">
+            @for (language of languages; track language) {
+                <div class="option" (click)='isOpen.set(false); setLanguage(language.name);'>
+                    <img [src]="language.iconUrl" alt="language.label"  width='24' height='16'/> 
+                </div>
+            }
+        </div>
+    }
+</div> 
 

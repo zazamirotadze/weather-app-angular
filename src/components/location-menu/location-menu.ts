@@ -2,7 +2,6 @@ import { Component, WritableSignal, inject, signal } from '@angular/core';
 import { ClickOutside } from '../../directives/click-outside';
 import { Location } from '../../types/weather.types';
 import { locations } from '../../data/locations';
-import { translations } from '../../data/translations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WeatherState } from '../../services/weatherState';
 
@@ -15,9 +14,8 @@ export class LocationMenu {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   protected weatherState = inject(WeatherState);
-  locations: Location[] = locations;
-  translations = translations;
-  isOpen: WritableSignal<boolean> = signal(false); 
+  protected locations: Location[] = locations;
+  protected isOpen: WritableSignal<boolean> = signal(false); 
 
   setLocation(locationName: string) {
     this.weatherState.setLocation(locationName);

@@ -2,6 +2,7 @@ interface Location {
     lat: number;
     lon: number;
     name: SupportedLocations;
+    displayName: string;
 }
 
 interface Weather {

@@ -1,0 +1,22 @@
+# 1. მთავარ გვერდზე (/) შემოსვლისას მომხმარებელი ყოველთვის მიდის ქართულ ვერსიაზე (/ka/)
+[[redirects]]
+  from = "/"
+  to = "/ka/"
+  status = 302
+
+# 2. ანგულარის შიდა როუტების მართვა (საიტის დარეფრეშების პრობლემის მოგვარება)
+[[redirects]]
+  from = "/ka/*"
+  to = "/ka/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+# 3. არასწორი მისამართის დამჭერი (Fallback)
+[[redirects]]
+  from = "/*"
+  to = "/ka/index.html"
+  status = 200
